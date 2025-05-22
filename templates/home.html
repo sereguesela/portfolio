@@ -1,588 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Alef, Desenvolvedor Web especializado em Godot, Roblox Studio, HTML, CSS, PHP e Python. Confira meus projetos e entre em contato!">
-    <meta name="keywords" content="Desenvolvedor Web, Godot, Roblox Studio, HTML, CSS, PHP, Python, Portfolio, Desenvolvimento de Jogos">
-    <meta name="author" content="Alef Desenvolvedor">
-    <meta property="og:title" content="Alef - Desenvolvedor Web">
-    <meta property="og:description" content="Portfólio de Alef, Desenvolvedor Web especializado em Godot, Roblox Studio, HTML, CSS, PHP e Python.">
+    <meta name="description"
+        content="Portfólio de Alef, desenvolvedor que gosta de tecnologia, criação de jogos e web, com alguma experiência em Godot, Roblox Studio, HTML, CSS, PHP, MySQL e Python. Muitas vezes conto com a ajuda de IA para facilitar o que faço.">
+    <meta name="keywords"
+        content="Desenvolvedor, Roblox Studio, HTML, CSS, PHP, MySQL, Python, Portfólio, Desenvolvimento de Jogos, Inteligência Artificial">
+    <meta name="author" content="Alef">
+    <meta property="og:title" content="Alef - Desenvolvedor">
+    <meta property="og:description"
+        content="Portfólio de Alef, desenvolvedor interessado em tecnologia, jogos e web, que muitas vezes utiliza IA para criar e resolver problemas.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://seusite.com">
+
+    <meta property="og:url" content="https://alef-portfolio.onrender.com/">
     <meta name="theme-color" content="#121212">
-    <link rel="canonical" href="https://seusite.com">
+    <link rel="canonical" href="https://alef-portfolio.onrender.com/">
     <title>Alef - Desenvolvedor Web | Portfólio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #00ffaa;
-            --secondary: #0099ff;
-            --dark: #121212;
-            --darker: #0a0a0a;
-            --light: #f0f0f0;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--dark);
-            color: var(--light);
-            overflow-x: hidden;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        /* Efeito de partículas */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
-        /* Cursor personalizado */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--primary);
-            mix-blend-mode: difference;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s ease;
-        }
-
-        .cursor-follower {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--secondary);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transform: translate(-50%, -50%);
-            transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-        }
-
-        /* Header */
-        header {
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background-color: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-            transition: var(--transition);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-
-        /* Main content */
-        main {
-            margin-top: 80px;
-            padding: 2rem;
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 4rem 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h1, h2, h3, h4 {
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .hero {
-            text-align: center;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .hero-title-static {
-            display: block;
-        }
-
-        .typing-container {
-            display: inline-block;
-            position: relative;
-            height: 1.2em;
-            overflow: hidden;
-        }
-
-        .typing-effect {
-            display: inline-block;
-            position: relative;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .typing-effect::after {
-            content: '';
-            position: absolute;
-            right: -5px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 2px;
-            height: 1.2em;
-            background: var(--primary);
-            animation: blink-fade 1s ease-in-out infinite;
-            border-radius: 1px;
-            opacity: 0.8;
-        }
-
-        @keyframes blink-fade {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 0; }
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: var(--dark);
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0, 255, 170, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 255, 170, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            margin-left: 1rem;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: var(--dark);
-        }
-
-        /* Sobre Mim */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .about-text p {
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .skill-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1rem 1.5rem;
-            transition: var(--transition);
-            cursor: default;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            background: rgba(0, 255, 170, 0.1);
-            border-color: var(--primary);
-        }
-
-        .skill-card i {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        /* Projetos */
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 255, 170, 0.2);
-            border-color: var(--primary);
-        }
-
-        .project-image {
-            height: 200px;
-            background: linear-gradient(45deg, var(--darker), var(--dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .project-info p {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .tag {
-            background: rgba(0, 153, 255, 0.2);
-            color: var(--secondary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-        }
-
-        /* Contato */
-        .contact-container {
-            display: flex;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-info h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .contact-info p {
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: var(--transition);
-            padding: 0.5rem;
-            border-radius: 10px;
-        }
-
-        .contact-method:hover {
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateX(5px);
-        }
-
-        .contact-method i {
-            font-size: 1.5rem;
-            color: var(--primary);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 255, 170, 0.1);
-            border-radius: 50%;
-        }
-
-        .contact-method a {
-            color: var(--light);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .contact-method a:hover {
-            color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--darker);
-            margin-top: 4rem;
-            position: relative;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--light);
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Easter Egg */
-        .easter-egg {
-            position: fixed;
-            bottom: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: var(--dark);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 5px 20px rgba(0, 255, 170, 0.5);
-            transition: all 0.5s ease;
-            z-index: 1000;
-        }
-
-        .easter-egg.show {
-            bottom: 20px;
-        }
-
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .about-content, .contact-container {
-                flex-direction: column;
-            }
-            
-            .hero h1 {
-                font-size: 3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--darker);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: var(--transition);
-                z-index: 99;
-            }
-
-            nav.active {
-                left: 0;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 2rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .btn-container {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .btn-outline {
-                margin-left: 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
 </head>
+
 <body>
     <!-- Cursor personalizado -->
     <div class="cursor"></div>
@@ -620,7 +59,9 @@
                     <span class="typing-effect">Desenvolvedor Web</span>
                 </div>
             </h1>
-            <p>Sou um desenvolvedor apaixonado por tecnologia e criação de jogos, com experiência em diversas áreas, incluindo Godot, Roblox Studio, HTML, CSS, PHP e Python.</p>
+            <p>Sou um desenvolvedor que gosta de tecnologia e criação de jogos, com alguma experiência em áreas como
+                HTML, CSS, PHP, MySQL, Python e Roblox Studio. Muitas vezes conto com a ajuda de ferramentas de
+                inteligência artificial para facilitar o que faço.</p>
             <div class="btn-container">
                 <a href="#projects" class="btn">Ver Projetos</a>
                 <a href="#contact" class="btn btn-outline">Contato</a>
@@ -632,15 +73,20 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>Sobre Mim</h2>
-                    <p>Sou um desenvolvedor apaixonado por tecnologia e criação de jogos, com experiência em diversas áreas, incluindo Godot, Roblox Studio, HTML, CSS, PHP e Python. Adoro explorar novas ideias e transformar conceitos em realidade, seja através de jogos, sistemas web ou projetos criativos.</p>
-                    <p>Além disso, estou sempre buscando aprimorar minhas habilidades e descobrir novas formas de solucionar problemas de maneira eficiente.</p>
-                    
+                    <p>Sou um desenvolvedor que gosta de tecnologia e criação de jogos, com alguma experiência em áreas
+                        como HTML, CSS, PHP, MySQL, Python e Roblox Studio. A maior parte do que faço envolve o uso de
+                        inteligência artificial para facilitar ou automatizar tarefas, então nem sempre é fruto de pura
+                        habilidade.</p>
+                    <p>Gosto de explorar novas ideias e transformar conceitos em projetos práticos, seja através de
+                        jogos, sistemas web ou outras criações. Sempre que posso, busco aprender um pouco mais e
+                        encontrar formas mais simples e eficientes de resolver problemas.</p>
+
                     <h3 style="margin-top: 2rem; color: var(--secondary);">Habilidades</h3>
                     <div class="skills-container">
                         <div class="skill-card">
                             <i class="fas fa-code"></i>
                             <h4>Web Development</h4>
-                            <p>HTML, CSS, Python, Bootstrap</p>
+                            <p>HTML, CSS, Python</p>
                         </div>
                         <div class="skill-card">
                             <i class="fas fa-server"></i>
@@ -652,11 +98,6 @@
                             <h4>Hardware</h4>
                             <p>Montagem de PCs</p>
                         </div>
-                        <!-- <div class="skill-card">
-                            <i class="fas fa-gamepad"></i>
-                            <h4>Game Dev</h4>
-                            <p>Godot, Roblox Studio</p>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -665,56 +106,42 @@
         <!-- Seção Projetos -->
         <section id="projects">
             <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary);">Projetos</h2>
-            
+
             <div class="projects-container">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sistema de Biblioteca Escolar">
+                        <img src="{{url_for('static', filename='images/mvc-biblioteca.png')}}"
+                            alt="Sistema de Biblioteca Escolar">
                     </div>
                     <div class="project-info">
-                        <h3>Sistema de Gestão de Biblioteca Escolar</h3>
-                        <p>Desenvolvimento de um sistema completo para cadastro e gerenciamento de alunos, professores, livros e empréstimos.</p>
+                        <h3>MVC Biblioteca</h3>
+                        <p>Desenvolvimento de um sistema de gestão completo usando IA para a escola em que estudo (Escola Estadual
+                            Miguel Vicente Cury)</p>
                         <div class="project-tags">
                             <span class="tag">PHP</span>
-                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">HTML/CSS/JS</span>
                             <span class="tag">Bootstrap</span>
                             <span class="tag">Google API</span>
                         </div>
                         <a href="https://github.com/sereguesela/mvc-biblioteca" target="_blank" class="btn">Detalhes</a>
                     </div>
                 </div>
-                
-                <!-- <div class="project-card">
+
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Jogo 2D desenvolvido em Godot">
+                        <img src="{{url_for('static', filename='images/servico-programador.png')}}"
+                            alt="Jogo 2D desenvolvido em Godot">
                     </div>
                     <div class="project-info">
-                        <h3>Jogo 2D em Godot</h3>
-                        <p>Desenvolvimento de um jogo 2D com mecânicas inovadoras e design criativo usando a engine Godot.</p>
+                        <h3>Serviço Programador</h3>
+                        <p>Desenvolvi uma Landing Page para uns amigos do Discord</p>
                         <div class="project-tags">
-                            <span class="tag">Godot</span>
-                            <span class="tag">GDScript</span>
-                            <span class="tag">Game Design</span>
+                            <span class="tag">HTML/CSS/JS</span>
+                            <span class="tag">Python</span>
                         </div>
                         <a href="#" class="btn">Detalhes</a>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Jogo desenvolvido no Roblox">
-                    </div>
-                    <div class="project-info">
-                        <h3>Experiência no Roblox</h3>
-                        <p>Criação de um jogo multiplayer no Roblox com sistemas complexos e mecânicas únicas usando Roblox Studio.</p>
-                        <div class="project-tags">
-                            <span class="tag">Roblox</span>
-                            <span class="tag">Lua</span>
-                            <span class="tag">Game Design</span>
-                        </div>
-                        <a href="#" class="btn">Detalhes</a>
-                    </div>
-                </div> -->
             </div>
         </section>
 
@@ -723,8 +150,9 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h2>Contato</h2>
-                    <p>Estou sempre aberto a novas oportunidades e colaborações. Se você tem um projeto em mente ou quer bater um papo sobre tecnologia, não hesite em entrar em contato!</p>
-                    
+                    <p>Estou sempre aberto a novas oportunidades e colaborações. Se você tem um projeto em mente ou quer
+                        bater um papo sobre tecnologia, fique à vontade para falar comigo!</p>
+
                     <div class="contact-methods">
                         <div class="contact-method">
                             <i class="fas fa-envelope"></i>
@@ -732,7 +160,8 @@
                         </div>
                         <div class="contact-method">
                             <i class="fab fa-github"></i>
-                            <a href="https://github.com/sereguesela" target="_blank" rel="noopener noreferrer">github.com/sereguesela</a>
+                            <a href="https://github.com/sereguesela" target="_blank"
+                                rel="noopener noreferrer">github.com/sereguesela</a>
                         </div>
                         <div class="contact-method">
                             <i class="fas fa-phone"></i>
@@ -747,268 +176,15 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="https://github.com/sereguesela" class="social-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/alef.2807/?igsn=MTJ4OU3ZXpqMTFtbg%3D%3D#" class="social-link" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/sereguesela" class="social-link" target="_blank" aria-label="GitHub"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/alef.2807/?igsn=MTJ4OU3ZXpqMTFtbg%3D%3D#" class="social-link"
+                target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        <p class="copyright">© <span id="current-year"></span> Alef - Desenvolvedor Web. Todos os direitos reservados.</p>
+        <p class="copyright">© <span id="current-year"></span> Alef - Desenvolvedor Web. Todos os direitos reservados.
+        </p>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Atualizar ano no footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Cursor personalizado
-        const cursor = document.querySelector('.cursor');
-        const cursorFollower = document.querySelector('.cursor-follower');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            setTimeout(() => {
-                cursorFollower.style.left = e.clientX + 'px';
-                cursorFollower.style.top = e.clientY + 'px';
-            }, 100);
-        });
-
-        document.querySelectorAll('a, button, .project-card, .skill-card, .contact-method').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursorFollower.style.transform = 'translate(-50%, -50%) scale(0.5)';
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-            });
-        });
-
-        // Menu mobile
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            menuToggle.innerHTML = nav.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-
-        // Scroll suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Fechar menu mobile se aberto
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            });
-        });
-
-        // Animação de scroll
-        const sections = document.querySelectorAll('section');
-
-        function checkScroll() {
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (sectionTop < windowHeight * 0.75) {
-                    section.classList.add('visible');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
-
-        // Animação de digitação corrigida
-        const typingText = document.querySelector('.typing-effect');
-        const text = "Desenvolvedor Web";
-        let index = 0;
-
-        // Clear the text content initially to avoid duplication on reload
-        typingText.textContent = "";
-
-        function typeWriter() {
-            if (index < text.length) {
-                typingText.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, 120);
-            } else {
-                // Manter o cursor piscando após a animação
-                typingText.style.animation = "blink-fade 1s ease-in-out infinite";
-            }
-        }
-
-        // Iniciar animação após um pequeno delay
-        setTimeout(typeWriter, 1000);
-
-        // Efeito de partículas
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#00ffaa"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#0099ff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-
-        // Easter Eggs
-        const easterEgg = document.querySelector('.easter-egg');
-        let eggCount = 0;
-
-        // Easter Egg 1: Clicar no logo 5 vezes
-        const logo = document.querySelector('.logo');
-        logo.addEventListener('click', () => {
-            eggCount++;
-            if (eggCount === 5) {
-                showEasterEgg("Você é persistente! 🏆");
-                eggCount = 0;
-            }
-        });
-
-        // Easter Egg 2: Tecla secreta (A L E F)
-        const konamiCode = ['a', 'l', 'e', 'f'];
-        let konamiIndex = 0;
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key.toLowerCase() === konamiCode[konamiIndex]) {
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
-                    showEasterEgg("Código secreto desbloqueado! 🎮");
-                    konamiIndex = 0;
-                }
-            } else {
-                konamiIndex = 0;
-            }
-        });
-
-        function showEasterEgg(message) {
-            easterEgg.textContent = message;
-            easterEgg.classList.add('show');
-            
-            setTimeout(() => {
-                easterEgg.classList.remove('show');
-            }, 3000);
-        }
-
-        // Easter Egg 3: Rolagem até o final
-        let scrolledToBottom = false;
-
-        window.addEventListener('scroll', () => {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100 && !scrolledToBottom) {
-                scrolledToBottom = true;
-                showEasterEgg("Você chegou até o final! 👏");
-            }
-        });
-    </script>
+    <script src="{{url_for('static', filename='js/home.js')}}"></script>
 </body>
 </html>
