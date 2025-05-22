@@ -34,7 +34,7 @@ body {
 }
 
 /* Cursor personalizado */
-.cursor {
+/* .cursor {
     position: fixed;
     width: 20px;
     height: 20px;
@@ -57,7 +57,7 @@ body {
     z-index: 9998;
     transform: translate(-50%, -50%);
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-}
+} */
 
 /* Header */
 header {
